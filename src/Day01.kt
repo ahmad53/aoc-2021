@@ -1,31 +1,17 @@
 fun main() {
-    var count = 0;
-    var countChunk = 0;
+    fun part1(input: List<String>): Int {
+        return input.size
+    }
+
+    fun part2(input: List<String>): Int {
+        return input.size
+    }
+
+    // test if implementation meets criteria from the description, like:
     val testInput = readInput("Day01_test")
-    for (n in testInput.indices){
-        if(n>0){
-            if(testInput[n] > testInput[n-1]){
-                // println("increased")
-                count++
-            }else{
-                //  println("decrease")
-            }
-        }
-    }
-    println("Part 1 Answer = $count") //Result of part one
+    check(part1(testInput) == 1)
 
-    // -------------------------------------- PART TWO --------------------------------------------------
-
-    val chunkedList = testInput.windowed(3, step = 1, partialWindows = false) { it.sum()}
-    for (n in (chunkedList).indices ){
-        if(n>0){
-            if(chunkedList[n] > chunkedList[n-1]){
-                //     println("increased")
-                countChunk++
-            }else{
-                //    println("decrease")
-            }
-        }
-    }
-    println("Part 2 Answer = $countChunk") //Result of part two
+    val input = readInput("Day01")
+    println(part1(input))
+    println(part2(input))
 }
